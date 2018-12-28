@@ -1,0 +1,9 @@
+rootProject.name = 'filepreview'
+
+
+include 'jodconverter-core'
+include 'jodconverter-web'
+
+
+project(':jodconverter-core').projectDir = "$rootDir/jodconverter-core" as File
+project(':jodconverter-web').projectDir = "$rootDir/jodconverter-web" as File

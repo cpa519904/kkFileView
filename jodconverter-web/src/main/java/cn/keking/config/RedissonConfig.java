@@ -5,17 +5,21 @@ import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.client.codec.Codec;
 import org.redisson.config.Config;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.util.ClassUtils;
 
 /**
  * Created by kl on 2017/09/26.
  * redisson 客户端配置
  */
-@ConfigurationProperties(prefix = "spring.redisson")
 @Configuration
+@EnableAutoConfiguration
+@ConfigurationProperties(prefix = "spring.redisson")
+@Component
 public class RedissonConfig {
 
     private String address;

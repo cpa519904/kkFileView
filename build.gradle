@@ -1,0 +1,74 @@
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+    group = 'cn.keking'
+    version '0.0.2'
+
+}
+buildscript {
+  ext {
+    springBootVersion = '2.1.1.RELEASE'
+  }
+  repositories {
+    mavenLocal()
+    maven {
+      url "http://maven.aliyun.com/nexus/content/groups/public/"
+    }
+    maven {
+      credentials {
+        username 'wei.wang'
+        password 'wwwj2014'
+      }
+      url "http://code.icaikee.cn:8081/nexus/content/repositories/releases/"
+    }
+    maven {
+      credentials {
+        username 'wei.wang'
+        password 'wwwj2014'
+      }
+      url "http://code.icaikee.cn:8081/nexus/content/repositories/thirdparty/"
+    }
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+
+  }
+}
+
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
+    group = 'cn.keking'
+  
+  repositories {
+    mavenLocal()
+    maven {
+      url "http://maven.aliyun.com/nexus/content/groups/public/"
+    }
+    maven {
+      credentials {
+        username 'wei.wang'
+        password 'wwwj2014'
+      }
+      url "http://code.icaikee.cn:8081/nexus/content/repositories/releases/"
+    }
+    maven {
+      credentials {
+        username 'wei.wang'
+        password 'wwwj2014'
+      }
+      url "http://code.icaikee.cn:8081/nexus/content/repositories/thirdparty/"
+    }
+    mavenCentral()
+    maven { url "https://repository.jboss.org/nexus/content/groups/public-jboss/" }
+  }
+
+  
+  
+  
+}
